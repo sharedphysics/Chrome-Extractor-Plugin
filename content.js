@@ -3,6 +3,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     // Define your XPath expressions here
     const xpaths = {
       xpathtest: '/html/body/div[2]/div[2]/div[1]/ul/li[1]',  // Example XPath
+      xpathtest2: '/html/body/div[2]/div[2]/div[2]'
       //price: '//span[@class="price"]',        // Example XPath
       //description: '//div[@class="description"]' // Example XPath
     };

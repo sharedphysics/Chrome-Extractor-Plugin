@@ -1,47 +1,130 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     body { 
-      width: 300px; 
-      padding: 10px; 
-      font-family: Arial, sans-serif;
+      width: 320px; 
+      border-radius: 12px; 
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      margin: 0;
     }
+
+    .container {
+      background: white;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      position: relative;
+    }
+
+    h3 { 
+      font-size: 18px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin: 0 0 16px 0;
+      letter-spacing: -0.01em;
+    }
+
     .field { 
-      margin-bottom: 10px; 
-      word-break: break-word;
+      margin-bottom: 16px;
     }
+
+    .field-group {
+      margin-bottom: 12px;
+    }
+
+    .field-label {
+      font-weight: 500;
+      font-size: 13px;
+      color: #4a4a4a;
+      margin-bottom: 6px;
+      display: block;
+      letter-spacing: -0.01em;
+    }
+
+    .field-input {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      transition: all 0.2s ease;
+      background: #fafafa;
+    }
+
     .error {
-      color: #dc3545;
-      padding: 8px;
-      background-color: #f8d7da;
-      border-radius: 4px;
-      margin-bottom: 10px;
+      color: #dc2626;
+      padding: 12px;
+      background-color: #fef2f2;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      font-size: 13px;
+      border: 1px solid rgba(220, 38, 38, 0.1);
     }
+
     button { 
       width: 100%; 
-      padding: 8px; 
+      padding: 10px;
       margin-bottom: 8px;
-      background-color: #007bff;
-      color: white;
       border: none;
-      border-radius: 4px;
+      border-radius: 8px;
       cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      transition: all 0.2s ease;
     }
-    button:hover {
-      background-color: #0056b3;
+
+    #extract {
+      background: linear-gradient(135deg, #6b6ef8, #8b8ff8);
+      color: white;
+      box-shadow: 0 2px 4px rgba(107, 110, 248, 0.2);
     }
+
+    #extract:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(107, 110, 248, 0.3);
+    }
+
+    #copy {
+      background: white;
+      color: #6b6ef8;
+      border: 1px solid rgba(107, 110, 248, 0.2);
+      box-shadow: 0 1px 2px rgba(107, 110, 248, 0.1);
+    }
+
+    #copy:hover {
+      background: #f8f8ff;
+      border-color: rgba(107, 110, 248, 0.4);
+    }
+
     button:disabled {
-      background-color: #cccccc;
+      background: #e0e0e0;
+      color: #a0a0a0;
       cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+      border: 1px solid #e0e0e0;
+    }
+
+    /* Smooth animations for all interactions */
+    * {
+      transition: all 0.2s ease;
     }
   </style>
 </head>
 <body>
-  <h3>Data Extractor</h3>
-  <div id="extractedData"></div>
-  <button id="extract">Extract Data</button>
-  <button id="copy" disabled>Copy to Clipboard</button>
+  <div class="container">
+    <h3>Data Extractor</h3>
+    <div id="extractedData"></div>
+    <button id="extract">Extract Data</button>
+    <button id="copy" disabled>Copy to Clipboard</button>
+  </div>
   <script src="popup.js"></script>
 </body>
 </html>
